@@ -26,7 +26,8 @@ public final class R {
         public static final int btn_4393=0x7f060005;
         public static final int btn_911=0x7f060000;
         public static final int btn_919=0x7f060001;
-        public static final int btn_custom=0x7f060006;
+        public static final int btn_custom=0x7f060007;
+        public static final int ed_custom=0x7f060006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

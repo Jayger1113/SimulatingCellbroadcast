@@ -8,6 +8,11 @@ import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.example.testcellbroadcast.util.Channel4380Constants;
+import com.example.testcellbroadcast.util.Channel911Constants;
+import com.example.testcellbroadcast.util.ChannelCustomConstants;
 
 public class MainActivity extends Activity {
 
@@ -17,6 +22,8 @@ public class MainActivity extends Activity {
     Button mBtn4383;
     Button mBtn4380;
     Button mBtn4393;
+    Button mBtnCustom;
+    EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,11 @@ public class MainActivity extends Activity {
         mBtn4380.setOnClickListener(mOnLickListener4380);
         mBtn4393 = (Button) findViewById(R.id.btn_4393);
         mBtn4393.setOnClickListener(mOnLickListener4393);
+
+        mEditText = (EditText) findViewById(R.id.ed_custom);
+        mBtnCustom = (Button) findViewById(R.id.btn_custom);
+        mBtnCustom.setOnClickListener(mOnLickListenerCustom);
+
     }
 
     View.OnClickListener mOnLickListener911 = new View.OnClickListener() {
@@ -83,6 +95,14 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             send4393TestMessage();
+        }
+    };
+
+    View.OnClickListener mOnLickListenerCustom = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            sendCustomTestMessage();
         }
     };
 
@@ -149,5 +169,28 @@ public class MainActivity extends Activity {
 
     private void send4393TestMessage() {
 
+    }
+
+    private void sendCustomTestMessage() {
+        Intent intent = new Intent("android.provider.Telephony.SMS_CB_RECEIVED");
+        SmsCbLocation smsCbLocation = new SmsCbLocation(
+                ChannelCustomConstants.TEST_PLMN,
+                ChannelCustomConstants.TEST_LAC,
+                ChannelCustomConstants.TEST_CELL_ID);
+        SmsCbMessage SmsCbMessage = new SmsCbMessage(
+                ChannelCustomConstants.TEST_MESSAGE_FORMAT,
+                ChannelCustomConstants.TEST_GEO_SCOPE,
+                ChannelCustomConstants.TEST_SERIAL_NUM, smsCbLocation,
+                Integer.parseInt(mEditText.getText().toString()),
+                ChannelCustomConstants.TEST_LANGUAGE,
+                ChannelCustomConstants.TEST_CHANNEL_MESSAGE,
+                ChannelCustomConstants.TEST_PRIORITY, null, null);
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.putExtra("message", SmsCbMessage);
+        intent.putExtra("subscription",
+                ChannelCustomConstants.TEST_SUBSCRIPTION);
+        intent.putExtra("slot", ChannelCustomConstants.TEST_SLOT);
+        startService(intent);
     }
 }

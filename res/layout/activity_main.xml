@@ -130,6 +130,7 @@
                 android:text="custom channel " />
 
             <EditText
+                android:id="@+id/ed_custom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="enter 1-999 int" />

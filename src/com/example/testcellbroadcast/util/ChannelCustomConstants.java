@@ -1,10 +1,8 @@
-package com.example.testcellbroadcast;
+package com.example.testcellbroadcast.util;
 
-public class Channel911Constants {
+public class ChannelCustomConstants {
 
     public static final String TEST_CHANNEL_MESSAGE = "This is channel testing message";
-
-    public static final int TEST_CHANNEL_911 = 911;
 
     public static final String TEST_PLMN = "00101";
 
@@ -24,6 +22,6 @@ public class Channel911Constants {
 
     public static final int TEST_SUBSCRIPTION = 0;
 
-    public static final int TEST_SLOT = 0;
+    public static final int TEST_SLOT = 1;
 
 }
