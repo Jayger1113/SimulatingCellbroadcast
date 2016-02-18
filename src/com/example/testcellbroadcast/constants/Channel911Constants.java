@@ -1,4 +1,4 @@
-package com.example.testcellbroadcast.util;
+package com.example.testcellbroadcast.constants;
 
 public class Channel911Constants {
 
@@ -23,7 +23,5 @@ public class Channel911Constants {
     public static final int TEST_PRIORITY = 0;
 
     public static final int TEST_SUBSCRIPTION = 0;
-
-    public static final int TEST_SLOT = 1;
 
 }
