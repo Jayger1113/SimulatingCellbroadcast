@@ -5,7 +5,7 @@
     android:versionName="test_cb_1.2.x.x_20160215" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application

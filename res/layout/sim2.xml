@@ -1,6 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    
     android:id="@+id/sim2_pager_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -38,6 +37,13 @@
                     android:text="Send" >
                 </Button>
             </LinearLayout>
+
+            <Switch
+                android:id="@+id/sim2_switch_911"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="測試Dialog"
+                android:textOn="測試Notification" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -143,15 +149,17 @@
                     android:id="@+id/sim2_ed_custom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="enter 1-999 int" />
-
-                <Button
-                    android:id="@+id/sim2_btn_custom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Send" >
-                </Button>
+                    android:hint="enter test channel between 1~999"
+                    android:inputType="number"
+                    android:text="50" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/sim2_btn_custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send" >
+            </Button>
         </LinearLayout>
     </ScrollView>
 

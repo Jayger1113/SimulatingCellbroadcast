@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import com.example.testcellbroadcast.constants.Channel4370Constants;
 import com.example.testcellbroadcast.constants.Channel4380Constants;
@@ -38,6 +39,7 @@ public class MyPagerAdapter extends PagerAdapter {
     Button mSim1Btn4393;
     Button mSim1BtnCustom;
     EditText mSim1EditText;
+    Switch mSim1Switch911;
 
     Button mSim2Btn911;
     Button mSim2Btn919;
@@ -47,6 +49,7 @@ public class MyPagerAdapter extends PagerAdapter {
     Button mSim2Btn4393;
     Button mSim2BtnCustom;
     EditText mSim2EditText;
+    Switch mSim2Switch911;
 
     public MyPagerAdapter(Activity activity) {
         mListViews = new ArrayList<View>();
@@ -95,6 +98,7 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim1EditText = (EditText) mActivity.findViewById(R.id.sim1_ed_custom);
         mSim1BtnCustom = (Button) mActivity.findViewById(R.id.sim1_btn_custom);
         mSim1BtnCustom.setOnClickListener(mOnLickListenerCustom);
+        mSim1Switch911 = (Switch) mActivity.findViewById(R.id.sim1_switch_911);
 
         mSim2Btn911 = (Button) mActivity.findViewById(R.id.sim2_btn_911);
         mSim2Btn911.setOnClickListener(mOnLickListener911);
@@ -108,6 +112,7 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim2Btn4380.setOnClickListener(mOnLickListener4380);
         mSim2Btn4393 = (Button) mActivity.findViewById(R.id.sim2_btn_4393);
         mSim2Btn4393.setOnClickListener(mOnLickListener4393);
+        mSim2Switch911 = (Switch) mActivity.findViewById(R.id.sim2_switch_911);
 
         mSim2EditText = (EditText) mActivity.findViewById(R.id.sim2_ed_custom);
         mSim2BtnCustom = (Button) mActivity.findViewById(R.id.sim2_btn_custom);
@@ -119,7 +124,16 @@ public class MyPagerAdapter extends PagerAdapter {
 
         @Override
         public void onClick(View v) {
-            send911TestMessage(v.getId() == R.id.sim1_btn_911 ? 0 : 1);
+            boolean isSim1 = v.getId() == R.id.sim1_btn_911 ? true : false;
+            int testGeo;
+            if (isSim1) {
+                testGeo = mSim1Switch911.isChecked() ? 1
+                        : Channel911Constants.TEST_GEO_SCOPE;
+            } else {
+                testGeo = mSim2Switch911.isChecked() ? 1
+                        : Channel911Constants.TEST_GEO_SCOPE;
+            }
+            send911TestMessage(isSim1 ? 0 : 1, testGeo);
         }
     };
     View.OnClickListener mOnLickListener919 = new View.OnClickListener() {
@@ -169,15 +183,15 @@ public class MyPagerAdapter extends PagerAdapter {
         }
     };
 
-    private void send911TestMessage(int testSlotId) {
-        Log.v(TAG, "send911TestMessage,testSlotId = " + testSlotId);
+    private void send911TestMessage(int testSlotId, int testGEOScope) {
+        Log.v(TAG, "send911TestMessage,testSlotId = " + testSlotId
+                + ",testGEOScope=" + testGEOScope);
         Intent intent = new Intent("android.provider.Telephony.SMS_CB_RECEIVED");
         SmsCbLocation smsCbLocation = new SmsCbLocation(
                 Channel911Constants.TEST_PLMN, Channel911Constants.TEST_LAC,
                 Channel911Constants.TEST_CELL_ID);
         SmsCbMessage SmsCbMessage = new SmsCbMessage(
-                Channel911Constants.TEST_MESSAGE_FORMAT,
-                Channel911Constants.TEST_GEO_SCOPE,
+                Channel911Constants.TEST_MESSAGE_FORMAT, testGEOScope,
                 Channel911Constants.TEST_SERIAL_NUM, smsCbLocation,
                 Channel911Constants.TEST_CHANNEL_911,
                 Channel911Constants.TEST_LANGUAGE,
