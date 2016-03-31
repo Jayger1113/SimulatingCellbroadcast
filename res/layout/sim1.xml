@@ -48,7 +48,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -80,6 +82,14 @@
                     android:text="Send" >
                 </Button>
             </LinearLayout>
+
+            <Switch
+                android:id="@+id/sim1_switch_4370"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textOff="測試Dialog"
+                android:textOn="測試Notification" />
 
             <LinearLayout
                 android:layout_width="match_parent"

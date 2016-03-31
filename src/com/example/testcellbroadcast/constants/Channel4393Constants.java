@@ -24,7 +24,7 @@ public class Channel4393Constants {
 
     public static final int TEST_SUBSCRIPTION = 0;
 
-    public static final int TEST_CMASINFO_MESSAGE_CLASS = -1;
+    public static final int TEST_CMASINFO_MESSAGE_CLASS = 4;
 
     public static final int TEST_CMASINFO_CATEGORY = -1;
 
