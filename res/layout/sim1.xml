@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test SIM1"
+        android:text="@string/test_sim1"
         android:textSize="20sp" />
 
     <ScrollView
@@ -28,13 +28,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 911(TW only)" />
+                    android:text="@string/channel_911" />
 
                 <Button
                     android:id="@+id/sim1_btn_911"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
 
@@ -48,40 +48,42 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp" >
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 919(TW only)" />
+                    android:text="@string/channel_919" />
 
                 <Button
                     android:id="@+id/sim1_btn_919"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp" >
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 4370" />
+                    android:text="@string/channel_4370" />
 
                 <Button
                     android:id="@+id/sim1_btn_4370"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
+
+
 
             <Switch
                 android:id="@+id/sim1_switch_4370"
@@ -99,13 +101,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 4383" />
+                    android:text="@string/channel_4383" />
 
                 <Button
                     android:id="@+id/sim1_btn_4383"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
 
@@ -117,13 +119,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 4380" />
+                    android:text="@string/channel_4380" />
 
                 <Button
                     android:id="@+id/sim1_btn_4380"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
 
@@ -135,13 +137,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="channel 4393" />
+                    android:text="@string/channel_4393" />
 
                 <Button
                     android:id="@+id/sim1_btn_4393"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Send" >
+                    android:text="@string/btn_send" >
                 </Button>
             </LinearLayout>
 
@@ -153,7 +155,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="custom channel " />
+                    android:text="@string/btn_send" />
 
                 <EditText
                     android:id="@+id/sim1_ed_custom"
@@ -161,14 +163,14 @@
                     android:layout_height="wrap_content"
                     android:hint="enter test channel between 1~999"
                     android:inputType="number"
-                    android:text="50" />
+                    android:text="@string/channel_50" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/sim1_btn_custom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Send" >
+                android:text="@string/btn_send" >
             </Button>
         </LinearLayout>
     </ScrollView>

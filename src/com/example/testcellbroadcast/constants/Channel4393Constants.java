@@ -8,7 +8,7 @@ public class Channel4393Constants {
 
     public static final String TEST_PLMN = "00101";
 
-    public static final int TEST_LAC = 18;
+    public static final int TEST_LAC = 19;
 
     public static final int TEST_CELL_ID = 18;
 

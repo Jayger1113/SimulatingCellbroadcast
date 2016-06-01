@@ -226,8 +226,8 @@ public class MyPagerAdapter extends PagerAdapter {
                 Channel911Constants.TEST_CHANNEL_911, Channel911Constants.TEST_LANGUAGE,
                 Channel911Constants.TEST_CHANNEL_MESSAGE, Channel911Constants.TEST_PRIORITY, null,
                 null);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel911Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -244,8 +244,8 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel919Constants.TEST_CHANNEL_919,
                 Channel919Constants.TEST_LANGUAGE, Channel919Constants.TEST_CHANNEL_MESSAGE,
                 Channel919Constants.TEST_PRIORITY, null, null);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel919Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -267,20 +267,20 @@ public class MyPagerAdapter extends PagerAdapter {
                 Channel4370Constants.TEST_CMASINFO_CERTAINTY);
         SmsCbMessage SmsCbMessage = null;
         if (testGEOScope == 0) {
-            SmsCbMessage = new SmsCbMessage(Channel4370Constants.TEST_MESSAGE_FORMAT,
-                    testGEOScope, Channel4370Constants.TEST_SERIAL_NUM, smsCbLocation,
+            SmsCbMessage = new SmsCbMessage(Channel4370Constants.TEST_MESSAGE_FORMAT, testGEOScope,
+                    Channel4370Constants.TEST_SERIAL_NUM, smsCbLocation,
                     Channel4370Constants.TEST_CHANNEL_4370, Channel4370Constants.TEST_LANGUAGE,
                     Channel4370Constants.TEST_CHANNEL_MESSAGE, Channel4370Constants.TEST_PRIORITY,
                     null, smsCbCmasInfo);
         } else {
-            SmsCbMessage = new SmsCbMessage(Channel4370Constants.TEST_MESSAGE_FORMAT,
-                    testGEOScope, Channel4370Constants.TEST_SERIAL_NUM, smsCbLocation,
+            SmsCbMessage = new SmsCbMessage(Channel4370Constants.TEST_MESSAGE_FORMAT, testGEOScope,
+                    Channel4370Constants.TEST_SERIAL_NUM, smsCbLocation,
                     Channel4370Constants.TEST_CHANNEL_4370, Channel4370Constants.TEST_LANGUAGE,
                     Channel4370Constants.TEST_CHANNEL_MESSAGE, Channel4370Constants.TEST_PRIORITY,
                     null, null);
         }
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4370Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -304,8 +304,8 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4383Constants.TEST_CHANNEL_4383,
                 Channel4383Constants.TEST_LANGUAGE, Channel4383Constants.TEST_CHANNEL_MESSAGE,
                 Channel4383Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4383Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -329,8 +329,8 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4380Constants.TEST_CHANNEL_4380,
                 Channel4380Constants.TEST_LANGUAGE, Channel4380Constants.TEST_CHANNEL_MESSAGE,
                 Channel4380Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4380Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -354,8 +354,8 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4393Constants.TEST_CHANNEL_4393,
                 Channel4393Constants.TEST_LANGUAGE, Channel4393Constants.TEST_CHANNEL_MESSAGE,
                 Channel4393Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4393Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
@@ -374,11 +374,12 @@ public class MyPagerAdapter extends PagerAdapter {
                         : mSim2EditText.getText().toString()),
                 ChannelCustomConstants.TEST_LANGUAGE, ChannelCustomConstants.TEST_CHANNEL_MESSAGE,
                 ChannelCustomConstants.TEST_PRIORITY, null, null);
-        intent.setClassName("com.asus.cellbroadcastreceiver",
-                "com.asus.cellbroadcastreceiver.CellBroadcastAlertService");
+        intent.setClassName("com.android.cellbroadcastreceiver",
+                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", ChannelCustomConstants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
         mActivity.startService(intent);
     }
+
 }

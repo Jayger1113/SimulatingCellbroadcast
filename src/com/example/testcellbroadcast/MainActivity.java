@@ -3,9 +3,12 @@ package com.example.testcellbroadcast;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 public class MainActivity extends Activity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+    
     MyPagerAdapter mMyPagerAdapter;
     ViewPager mMyViewPager;
 
@@ -14,6 +17,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initLayout();
+        Logger.v(Logger.GLOBAL_TAG, "onCreate");
+        Logger.d(Logger.GLOBAL_TAG, "onCreate");
+        Logger.i(Logger.GLOBAL_TAG, "onCreate");
     }
 
     private void initLayout() {
