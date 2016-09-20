@@ -226,11 +226,12 @@ public class MyPagerAdapter extends PagerAdapter {
                 Channel911Constants.TEST_CHANNEL_911, Channel911Constants.TEST_LANGUAGE,
                 Channel911Constants.TEST_CHANNEL_MESSAGE, Channel911Constants.TEST_PRIORITY, null,
                 null);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel911Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
+        mActivity.sendBroadcast(intent);
         mActivity.startService(intent);
     }
 
@@ -244,12 +245,13 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel919Constants.TEST_CHANNEL_919,
                 Channel919Constants.TEST_LANGUAGE, Channel919Constants.TEST_CHANNEL_MESSAGE,
                 Channel919Constants.TEST_PRIORITY, null, null);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel919Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+        //mActivity.startService(intent);
     }
 
     private void send4370TestMessage(int testSlotId, int testGEOScope) {
@@ -279,12 +281,13 @@ public class MyPagerAdapter extends PagerAdapter {
                     Channel4370Constants.TEST_CHANNEL_MESSAGE, Channel4370Constants.TEST_PRIORITY,
                     null, null);
         }
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4370Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+//        mActivity.startService(intent);
     }
 
     private void send4383TestMessage(int testSlotId) {
@@ -304,12 +307,13 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4383Constants.TEST_CHANNEL_4383,
                 Channel4383Constants.TEST_LANGUAGE, Channel4383Constants.TEST_CHANNEL_MESSAGE,
                 Channel4383Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4383Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+//        mActivity.startService(intent);
     }
 
     private void send4380TestMessage(int testSlotId) {
@@ -329,12 +333,13 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4380Constants.TEST_CHANNEL_4380,
                 Channel4380Constants.TEST_LANGUAGE, Channel4380Constants.TEST_CHANNEL_MESSAGE,
                 Channel4380Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4380Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+//        mActivity.startService(intent);
     }
 
     private void send4393TestMessage(int testSlotId) {
@@ -354,12 +359,13 @@ public class MyPagerAdapter extends PagerAdapter {
                 smsCbLocation, Channel4393Constants.TEST_CHANNEL_4393,
                 Channel4393Constants.TEST_LANGUAGE, Channel4393Constants.TEST_CHANNEL_MESSAGE,
                 Channel4393Constants.TEST_PRIORITY, null, smsCbCmasInfo);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", Channel4393Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+//        mActivity.startService(intent);
     }
 
     private void sendCustomTestMessage(int testSlotId) {
@@ -374,12 +380,13 @@ public class MyPagerAdapter extends PagerAdapter {
                         : mSim2EditText.getText().toString()),
                 ChannelCustomConstants.TEST_LANGUAGE, ChannelCustomConstants.TEST_CHANNEL_MESSAGE,
                 ChannelCustomConstants.TEST_PRIORITY, null, null);
-        intent.setClassName("com.android.cellbroadcastreceiver",
-                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
+//        intent.setClassName("com.android.cellbroadcastreceiver",
+//                "com.android.cellbroadcastreceiver.CellBroadcastAlertService");
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", ChannelCustomConstants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
-        mActivity.startService(intent);
+        mActivity.sendBroadcast(intent);
+//        mActivity.startService(intent);
     }
 
 }
