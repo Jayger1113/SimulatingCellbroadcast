@@ -17,9 +17,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initLayout();
-        Logger.v(Logger.GLOBAL_TAG, "onCreate");
-        Logger.d(Logger.GLOBAL_TAG, "onCreate");
-        Logger.i(Logger.GLOBAL_TAG, "onCreate");
+        Log.v(TAG, "onCreate");
     }
 
     private void initLayout() {

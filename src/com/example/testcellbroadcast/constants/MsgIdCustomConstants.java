@@ -1,6 +1,6 @@
 package com.example.testcellbroadcast.constants;
 
-public class ChannelCustomConstants {
+public class MsgIdCustomConstants {
 
     public static final String TEST_CHANNEL_MESSAGE = "This is channel testing message";
 

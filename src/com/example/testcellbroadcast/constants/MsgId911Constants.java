@@ -1,10 +1,10 @@
 package com.example.testcellbroadcast.constants;
 
-public class Channel919Constants {
+public class MsgId911Constants {
 
     public static final String TEST_CHANNEL_MESSAGE = "This is channel testing message";
 
-    public static final int TEST_CHANNEL_919 = 919;
+    public static final int TEST_CHANNEL_911 = 911;
 
     public static final String TEST_PLMN = "00101";
 
