@@ -115,13 +115,13 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim1Btn4370.setOnClickListener(mOnLickListener4370);
 
         mSim1Btn4372 = (Button)mActivity.findViewById(R.id.sim1_btn_4372);
-        mSim1Btn4372.setOnClickListener(mOnLickListener4370);
+        mSim1Btn4372.setOnClickListener(mOnLickListener4372);
 
         mSim1Btn4374 = (Button)mActivity.findViewById(R.id.sim1_btn_4374);
-        mSim1Btn4374.setOnClickListener(mOnLickListener4370);
+        mSim1Btn4374.setOnClickListener(mOnLickListener4374);
 
         mSim1Btn4379 = (Button)mActivity.findViewById(R.id.sim1_btn_4379);
-        mSim1Btn4379.setOnClickListener(mOnLickListener4370);
+        mSim1Btn4379.setOnClickListener(mOnLickListener4379);
 
         mSim1Btn4380 = (Button)mActivity.findViewById(R.id.sim1_btn_4380);
         mSim1Btn4380.setOnClickListener(mOnLickListener4380);
@@ -137,6 +137,12 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim2Btn919.setOnClickListener(mOnLickListener919);
         mSim2Btn4370 = (Button)mActivity.findViewById(R.id.sim2_btn_4370);
         mSim2Btn4370.setOnClickListener(mOnLickListener4370);
+        mSim2Btn4372 = (Button)mActivity.findViewById(R.id.sim2_btn_4372);
+        mSim2Btn4372.setOnClickListener(mOnLickListener4372);
+        mSim2Btn4374 = (Button)mActivity.findViewById(R.id.sim2_btn_4374);
+        mSim2Btn4374.setOnClickListener(mOnLickListener4374);
+        mSim2Btn4379 = (Button)mActivity.findViewById(R.id.sim2_btn_4379);
+        mSim2Btn4379.setOnClickListener(mOnLickListener4379);
         mSim2Btn4380 = (Button)mActivity.findViewById(R.id.sim2_btn_4380);
         mSim2Btn4380.setOnClickListener(mOnLickListener4380);
         mSim2Switch911 = (Switch)mActivity.findViewById(R.id.sim2_switch_911);
