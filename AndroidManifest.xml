@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testcellbroadcast"
     android:versionCode="1"
-    android:versionName="test_cb_1.2.x.x_20160215"
+    android:versionName="test_cb_android_m"
     android:sharedUserId="android.uid.system" >
 
     <uses-sdk
