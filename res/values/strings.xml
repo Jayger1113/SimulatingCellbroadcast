@@ -12,6 +12,9 @@
     <string name="msg_id_911">911</string>
     <string name="msg_id_919">919</string>
 
+    <!-- ETWS 4352 -->
+    <string name="msg_id_4352">CMAS Presidential 4352</string>
+
     <!-- CMAS Presidential -->
     <string name="msg_id_4370">CMAS Presidential 4370</string>
     <!-- <string name="msg_id_4383">CMAS Presidential 4383</string> -->

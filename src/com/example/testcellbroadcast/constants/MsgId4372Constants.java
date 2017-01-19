@@ -2,7 +2,7 @@ package com.example.testcellbroadcast.constants;
 
 public class MsgId4372Constants {
 
-    public static final String TEST_CHANNEL_BODY = "EXTREME ALERT TESTING CMAS SUPPORT First CMAS message ID 4372@@@@@@@@";
+    public static final String TEST_CHANNEL_BODY = "EXTREME ALERT TESTING CMAS SUPPORT First CMAS message ID 4372";
 
     public static final int TEST_SERVICE_CATEGORY = 4372;
 

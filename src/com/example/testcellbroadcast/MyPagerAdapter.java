@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.telephony.SmsCbCmasInfo;
+import android.telephony.SmsCbEtwsInfo;
 import android.telephony.SmsCbLocation;
 import android.telephony.SmsCbMessage;
 import android.util.Log;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 
+import com.example.testcellbroadcast.constants.MsgId4352Constants;
 import com.example.testcellbroadcast.constants.MsgId4370Constants;
 import com.example.testcellbroadcast.constants.MsgId4372Constants;
 import com.example.testcellbroadcast.constants.MsgId4374Constants;
@@ -40,6 +42,8 @@ public class MyPagerAdapter extends PagerAdapter {
 
     Button mSim1Btn919;
 
+    Button mSim1Btn4352;
+
     Button mSim1Btn4370;
 
     Button mSim1Btn4372;
@@ -59,6 +63,8 @@ public class MyPagerAdapter extends PagerAdapter {
     Button mSim2Btn911;
 
     Button mSim2Btn919;
+
+    Button mSim2Btn4352;
 
     Button mSim2Btn4370;
 
@@ -111,6 +117,8 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim1Btn911.setOnClickListener(mOnLickListener911);
         mSim1Btn919 = (Button)mActivity.findViewById(R.id.sim1_btn_919);
         mSim1Btn919.setOnClickListener(mOnLickListener919);
+        mSim1Btn4352 = (Button)mActivity.findViewById(R.id.sim1_btn_4352);
+        mSim1Btn4352.setOnClickListener(mOnLickListener4352);
         mSim1Btn4370 = (Button)mActivity.findViewById(R.id.sim1_btn_4370);
         mSim1Btn4370.setOnClickListener(mOnLickListener4370);
 
@@ -135,6 +143,8 @@ public class MyPagerAdapter extends PagerAdapter {
         mSim2Btn911.setOnClickListener(mOnLickListener911);
         mSim2Btn919 = (Button)mActivity.findViewById(R.id.sim2_btn_919);
         mSim2Btn919.setOnClickListener(mOnLickListener919);
+        mSim2Btn4352 = (Button)mActivity.findViewById(R.id.sim2_btn_4352);
+        mSim2Btn4352.setOnClickListener(mOnLickListener4352);
         mSim2Btn4370 = (Button)mActivity.findViewById(R.id.sim2_btn_4370);
         mSim2Btn4370.setOnClickListener(mOnLickListener4370);
         mSim2Btn4372 = (Button)mActivity.findViewById(R.id.sim2_btn_4372);
@@ -172,6 +182,15 @@ public class MyPagerAdapter extends PagerAdapter {
         @Override
         public void onClick(View v) {
             send919TestMessage(v.getId() == R.id.sim1_btn_919 ? 0 : 1);
+        }
+    };
+
+    View.OnClickListener mOnLickListener4352 = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            boolean isSim1 = v.getId() == R.id.sim1_btn_4352 ? true : false;
+            send4352TestMessage(isSim1 ? 0 : 1);
         }
     };
 
@@ -256,6 +275,24 @@ public class MyPagerAdapter extends PagerAdapter {
                 null);
         intent.putExtra("message", SmsCbMessage);
         intent.putExtra("subscription", MsgId919Constants.TEST_SUBSCRIPTION);
+        intent.putExtra("slot", testSlotId);
+        mActivity.sendBroadcast(intent);
+    }
+
+    private void send4352TestMessage(int testSlotId) {
+        Log.v(TAG, "send4352TestMessage,testSlotId = " + testSlotId);
+        Intent intent = new Intent("android.provider.Telephony.SMS_EMERGENCY_CB_RECEIVED");
+        SmsCbLocation smsCbLocation = new SmsCbLocation(MsgId4370Constants.TEST_SmsCbLocation_Plmn,
+                MsgId4352Constants.TEST_SmsCbLocation_Lac,
+                MsgId4352Constants.TEST_SmsCbLocation_Cid);
+        SmsCbEtwsInfo smsCbEtwsInfo = new SmsCbEtwsInfo(SmsCbEtwsInfo.ETWS_WARNING_TYPE_EARTHQUAKE, true, true, true, null);
+        SmsCbMessage SmsCbMessage = new SmsCbMessage(MsgId4352Constants.TEST_MESSAGE_FORMAT,
+                MsgId4352Constants.TEST_GEO_SCOPE, MsgId4352Constants.TEST_SERIAL_NUM,
+                smsCbLocation, MsgId4352Constants.TEST_SERVICE_CATEGORY,
+                MsgId4352Constants.TEST_LANGUAGE, MsgId4352Constants.TEST_CHANNEL_BODY,
+                MsgId4352Constants.TEST_PRIORITY, smsCbEtwsInfo, null);
+        intent.putExtra("message", SmsCbMessage);
+        intent.putExtra("subscription", MsgId4370Constants.TEST_SUBSCRIPTION);
         intent.putExtra("slot", testSlotId);
         mActivity.sendBroadcast(intent);
     }
