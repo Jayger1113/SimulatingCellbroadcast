@@ -1,4 +1,4 @@
 # testcellbroadcast
 # git push origin HEAD
 
-#This project tend to test AOSP CellBroadcast by passing modem -> RIL (simulating Android telephony framework trigger a fake CB)
+#Test AOSP CellBroadcast by pass modem -> RIL (Mocking a CellBroadcast From Android Framework)
